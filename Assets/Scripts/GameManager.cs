@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public int score;
-
+    public GameObject player;
     void Start()
     {
         

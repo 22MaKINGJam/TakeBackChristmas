@@ -9,9 +9,11 @@ public class GiftTrigger : MonoBehaviour
     public GameObject character;
     public TextMeshProUGUI score_text;
     public int score; //red = 1, white = 10
+    //GameObject player = GameManager.instance.player;
     // Start is called before the first frame update
     void Start()
     {
+        
         score_text = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
     }
 
@@ -24,7 +26,11 @@ public class GiftTrigger : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject == character)
+        {
             score_text.GetComponent<IncreaseScore>().AddScore(score);
-        gameObject.SetActive(false);
+            GameManager.instance.player.GetComponent<PlayerSound>().PlaySound("getscore");
+            gameObject.SetActive(false);    
+        }
+
     }
 }

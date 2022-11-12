@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         this.playerRigidbody = this.GetComponent<Rigidbody2D>();
+        
 
     }
 
@@ -28,12 +29,14 @@ public class PlayerController : MonoBehaviour
         // 점프
         if (Input.GetButtonDown("Jump") && this.jumpCount < 2)
         {
+            transform.GetComponent<PlayerSound>().PlaySound("jump");
             this.jumpCount++;
             playerRigidbody.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
             //this.playerRigidbody.AddForce(transform.up * this.jumpForce);
             if (this.jumpCount > 1)
             {
                 this.isDoubleJump = true;
+                transform.GetComponent<PlayerSound>().PlaySound("jumpTwice");
             }
             anim.SetBool("isJumping", true);
         }
