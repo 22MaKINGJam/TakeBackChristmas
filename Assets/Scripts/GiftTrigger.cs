@@ -8,7 +8,7 @@ public class GiftTrigger : MonoBehaviour
 
     public GameObject character;
     public TextMeshProUGUI score_text;
-    public int score; //pink = 1, green = 10
+    public int score; //red = 1, white = 10
     // Start is called before the first frame update
     void Start()
     {
