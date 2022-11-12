@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4410191253089324288
+--- !u!1 &9031015887578787537
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4410191253089324290}
-  - component: {fileID: 4410191253089324291}
-  - component: {fileID: 4410191253089324541}
-  - component: {fileID: 4410191253089324540}
+  - component: {fileID: 9031015887578787536}
+  - component: {fileID: 9031015887578787539}
+  - component: {fileID: 1474001468284679248}
   m_Layer: 0
-  m_Name: snowman
+  m_Name: "\uBC14"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4410191253089324290
+--- !u!4 &9031015887578787536
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4410191253089324288}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.551451, y: -2.9522998, z: 7.269976}
-  m_LocalScale: {x: 0.100334615, y: 0.100334615, z: 0.100334615}
+  m_GameObject: {fileID: 9031015887578787537}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -11.527168, y: -2.2104979, z: 591.07916}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4410191253089324291
+--- !u!212 &9031015887578787539
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4410191253089324288}
+  m_GameObject: {fileID: 9031015887578787537}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -72,54 +71,40 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d3428301e0dff8842ae50a3aa7ec1f0d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: efaf6f4b87f51da4ba49b0598acc46dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 13.51, y: 18.55}
+  m_Size: {x: 3.714, y: 0.66}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4410191253089324541
+--- !u!61 &1474001468284679248
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4410191253089324288}
+  m_GameObject: {fileID: 9031015887578787537}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.92674613}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.51, y: 18.55}
-    newSize: {x: 13.51, y: 18.55}
+    oldSize: {x: 3.714, y: 0.66}
+    newSize: {x: 3.714, y: 0.66}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 13.51, y: 16.696507}
+  m_Size: {x: 3.714, y: 0.66}
   m_EdgeRadius: 0
---- !u!114 &4410191253089324540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4410191253089324288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eea80a85b9092e4fa120adf5c4bb6c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Max: 1
-  speed: 0
