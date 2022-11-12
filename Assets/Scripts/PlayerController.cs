@@ -11,20 +11,16 @@ public class PlayerController : MonoBehaviour
     private bool isDoubleJump = false;
     private Rigidbody2D playerRigidbody;
     Animator anim;
-
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         this.playerRigidbody = this.GetComponent<Rigidbody2D>();
 
     }
-    void Awake()
-    {
-        anim = GetComponent<Animator>();
-    }
 
-        // Update is called once per frame
-        void Update()
+    // Update is called once per frame
+    void Update()
     {
         // 달리기
         transform.Translate(Vector3.right * runSpeed * Time.deltaTime);
@@ -32,7 +28,6 @@ public class PlayerController : MonoBehaviour
         // 점프
         if (Input.GetButtonDown("Jump") && this.jumpCount < 2)
         {
-            anim.SetBool("isJumping", true);
             this.jumpCount++;
             playerRigidbody.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
             //this.playerRigidbody.AddForce(transform.up * this.jumpForce);
@@ -40,13 +35,16 @@ public class PlayerController : MonoBehaviour
             {
                 this.isDoubleJump = true;
             }
+            anim.SetBool("isJumping", true);
         }
 
         // y축 속도가 0이면 바닥인 것으로 판단
-        if(playerRigidbody.velocity.y == 0.0)
+        if (playerRigidbody.velocity.y == 0.0)
         {
             this.isJumping = false;
             this.jumpCount = 0;
+            anim.SetBool("isJumping", false);
+
         }
 
 
