@@ -121,4 +121,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 0}
   score_text: {fileID: 0}
-  score: 10
+  score: 100

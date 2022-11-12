@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GiftTrigger.cs" />
     <Compile Include="Assets\Scripts\IncreaseScore.cs" />
+    <Compile Include="Assets\Scripts\Monster_Move.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerSound.cs" />
     <Compile Include="Assets\Scripts\ScoreBoard.cs" />

@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float jumpForce = 700f;
+    public float jumpForce2 = 700f;
     public float runSpeed = 2.0f;
+    public float runSpeedWhileJump = 2.0f;
     private int jumpCount = 0;
     private bool isJumping = false;
     private bool isDoubleJump = false;
@@ -27,19 +29,37 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.right * runSpeed * Time.deltaTime);
 
         // 점프
-        if (Input.GetButtonDown("Jump") && this.jumpCount < 2)
+        if (Input.GetButtonDown("Jump") && this.jumpCount < 1)
         {
+            transform.Translate(Vector3.right * runSpeedWhileJump * Time.deltaTime);
             transform.GetComponent<PlayerSound>().PlaySound("jump");
             this.jumpCount++;
             playerRigidbody.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
             //this.playerRigidbody.AddForce(transform.up * this.jumpForce);
-            if (this.jumpCount > 1)
-            {
-                this.isDoubleJump = true;
-                transform.GetComponent<PlayerSound>().PlaySound("jumpTwice");
-            }
+            //if (this.jumpCount > 1)
+            //{
+            //    this.isDoubleJump = true;
+            //    transform.GetComponent<PlayerSound>().PlaySound("jumpTwice");
+            //}
             anim.SetBool("isJumping", true);
         }
+        else if (Input.GetButtonDown("Jump") && this.jumpCount < 2)
+        {
+            transform.Translate(Vector3.right * runSpeedWhileJump * Time.deltaTime);
+            transform.GetComponent<PlayerSound>().PlaySound("jumpTwice");
+            this.isDoubleJump = true;
+            this.jumpCount++;
+            playerRigidbody.AddForce(Vector3.up * jumpForce2, ForceMode2D.Impulse);
+            //this.playerRigidbody.AddForce(transform.up * this.jumpForce);
+            //if (this.jumpCount > 1)
+            //{
+            //    this.isDoubleJump = true;
+            //    transform.GetComponent<PlayerSound>().PlaySound("jumpTwice");
+            //}
+            anim.SetBool("isJumping", true);
+        }
+        else
+            transform.Translate(Vector3.right * runSpeed * Time.deltaTime);
 
         // y축 속도가 0이면 바닥인 것으로 판단
         if (playerRigidbody.velocity.y == 0.0)
