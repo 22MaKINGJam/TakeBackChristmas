@@ -23,5 +23,6 @@ public class IncreaseScore : MonoBehaviour
     {
         score_sum += score;
         score_text.text = "Score : " + score_sum;
+        GameManager.instance.score = score_sum;
     }
 }

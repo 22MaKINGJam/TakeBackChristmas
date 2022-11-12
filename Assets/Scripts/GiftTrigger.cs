@@ -22,10 +22,6 @@ public class GiftTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (collision.gameObject.tag == "pinkGift")
-        //    score_text.GetComponent<IncreaseScore>().AddScore(1); //pink gift socre = 1
-        //else if(collision.gameObject.tag == "greenGift")
-        //    score_text.GetComponent<IncreaseScore>().AddScore(10); //green gift socre = 10
         if(collision.gameObject.name == "Character")
             score_text.GetComponent<IncreaseScore>().AddScore(score);
         gameObject.SetActive(false);
