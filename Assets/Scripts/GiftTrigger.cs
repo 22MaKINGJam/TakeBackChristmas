@@ -5,6 +5,7 @@ using TMPro;
 
 public class GiftTrigger : MonoBehaviour
 {
+
     public GameObject character;
     public TextMeshProUGUI score_text;
     public int score; //pink = 1, green = 10
@@ -22,7 +23,7 @@ public class GiftTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name == "Character")
+        if(collision.gameObject == character)
             score_text.GetComponent<IncreaseScore>().AddScore(score);
         gameObject.SetActive(false);
     }
