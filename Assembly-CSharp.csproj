@@ -53,6 +53,7 @@
     <UnityVersion>2019.4.34f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BigGiftMovement.cs" />
     <Compile Include="Assets\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GiftTrigger.cs" />
