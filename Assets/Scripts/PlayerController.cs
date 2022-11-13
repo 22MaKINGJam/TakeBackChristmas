@@ -20,9 +20,9 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        GameManager.instance.Gameover = GameObject.Find("Gameover");
-        GameManager.instance.Gameover.SetActive(false);
+
         GameManager.instance.player = gameObject;
+
         Debug.Log(GameManager.instance.life);
         for (int index = 0; index < 3; index++)
         {
@@ -95,7 +95,6 @@ public class PlayerController : MonoBehaviour
         if (o.gameObject.CompareTag("Monster") || o.gameObject.CompareTag("GingerBread"))
         {
             GameManager.instance.life--;
-            Debug.Log(GameManager.instance.life);
             OnDamage();
            
             for (int index = 0; index < 3; index++)
@@ -108,7 +107,7 @@ public class PlayerController : MonoBehaviour
             }
             if (GameManager.instance.life <= 0)
             {
-                GameManager.instance.Gameover.SetActive(true);
+                SceneManager.LoadScene("Gameover");
             }
 
         }
@@ -117,7 +116,5 @@ public class PlayerController : MonoBehaviour
     void OnDamage()
     {
         anim.SetTrigger("hurt");
-        transform.GetComponent<PlayerSound>().PlaySound("damage");
-
     }
 }
