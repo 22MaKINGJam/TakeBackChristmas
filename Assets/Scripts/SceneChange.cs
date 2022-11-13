@@ -43,6 +43,12 @@ public class SceneChange : MonoBehaviour
         SceneManager.LoadScene("gift_chaeyeon");
 
     }
+    
+    public void ExitGame()
+    {
+        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit(); // 어플리케이션 종료
+    }
 
 
 }
