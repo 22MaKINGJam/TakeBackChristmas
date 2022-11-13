@@ -12,7 +12,7 @@ public class SceneChange : MonoBehaviour
     public Button btn1;
     void Start()
     {
-
+        if(btn1 != null)
         btn1.onClick.AddListener(undo);
 
         void undo()

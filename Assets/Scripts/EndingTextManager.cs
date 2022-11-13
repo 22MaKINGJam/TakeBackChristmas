@@ -10,4 +10,12 @@ public class EndingTextManager : MonoBehaviour
     {
         NextOb_text.SetActive(true);
     }
+    public void ActiveNextFalse()
+    {
+        gameObject.SetActive(false);
+    }
+    public void setscoreText()
+    {
+        PlayerPrefs.SetInt("currentScore", -1);
+    }
 }

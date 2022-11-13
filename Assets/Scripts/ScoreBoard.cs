@@ -13,7 +13,7 @@ public class ScoreBoard : MonoBehaviour
     public TextMeshProUGUI score3;
     public TextMeshProUGUI score4;
 
-    public int[] SBscore = new int[5];
+    int[] SBscore = new int[5];
 
     GameManager gameManager;
 
@@ -61,12 +61,25 @@ public class ScoreBoard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sortscore();
-        saveCurrentScore();
-        sortscore();
-        saveScore();
-        loadScore();
-        clearCurrentScore();
+        if (PlayerPrefs.GetInt("currentScore") == -1)
+        {
+            score0.text = "처음부터";
+            score1.text = "차근차근";
+            score2.text = "정석으로";
+            score3.text = "와주세요";
+            score4.text = "화이팅!!";
+            clearCurrentScore();
+        }
+        else
+        {
+            sortscore();
+            saveCurrentScore();
+            sortscore();
+            saveScore();
+            loadScore();
+            clearCurrentScore();
+
+        }
     }
 
     // Update is called once per frame

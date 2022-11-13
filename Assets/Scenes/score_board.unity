@@ -615,7 +615,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 509947026}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 509947028}
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &509947026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1229,7 +1240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -325, y: 0}
+  m_AnchoredPosition: {x: -324.99997, y: 0}
   m_SizeDelta: {x: -950, y: -100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &823959095
@@ -2943,8 +2954,7 @@ MonoBehaviour:
   score2: {fileID: 1643880710}
   score3: {fileID: 1045769921}
   score4: {fileID: 1147852124}
-  SBscore: 0200000000000000000000000000000000000000
-  currentScore: 0
+  currentScore: 10
 --- !u!1 &1517080589
 GameObject:
   m_ObjectHideFlags: 0

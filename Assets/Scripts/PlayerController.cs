@@ -15,6 +15,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     Animator anim;
     Vector3 pos;
+    float damegedWhen = 0;
+
+    public GameObject sound_j1;
+    public GameObject sound_j2;
+    public GameObject sound_d;
+
     //public int life;
     public GameObject[] heart;
 
@@ -48,8 +54,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && this.jumpCount < 1)
         {
             transform.Translate(Vector3.right * runSpeedWhileJump * Time.deltaTime);
-            transform.GetComponent<PlayerSound>().PlaySound("jump");
+            sound_j1.GetComponent<AudioSource>().Play();   
             this.jumpCount++;
+            playerRigidbody.velocity = new Vector2(0, 0);
             playerRigidbody.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
             //this.playerRigidbody.AddForce(transform.up * this.jumpForce);
             //if (this.jumpCount > 1)
@@ -62,9 +69,10 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetButtonDown("Jump") && this.jumpCount < 2)
         {
             transform.Translate(Vector3.right * runSpeedWhileJump * Time.deltaTime);
-            transform.GetComponent<PlayerSound>().PlaySound("jumpTwice");
+            sound_j2.GetComponent<AudioSource>().Play();
             this.isDoubleJump = true;
             this.jumpCount++;
+            playerRigidbody.velocity = new Vector2(0, 0);
             playerRigidbody.AddForce(Vector3.up * jumpForce2, ForceMode2D.Impulse);
             //this.playerRigidbody.AddForce(transform.up * this.jumpForce);
             //if (this.jumpCount > 1)
@@ -98,22 +106,26 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D o)
     {
-        if (o.gameObject.CompareTag("Monster") || o.gameObject.CompareTag("GingerBread"))
+        if (Time.time - damegedWhen > 0.3f)
         {
-            GameManager.instance.life--;
-            OnDamage();
-           
-            for (int index = 0; index < 3; index++)
+            if (o.gameObject.CompareTag("Monster") || o.gameObject.CompareTag("GingerBread"))
             {
-                heart[index].gameObject.SetActive(false);
-            }
-            for (int index = 0; index< GameManager.instance.life; index++)
-            {
-                heart[index].gameObject.SetActive(true);
-            }
-            if (GameManager.instance.life <= 0)
-            {
-                SceneManager.LoadScene("Gameover");
+                GameManager.instance.life--;
+                OnDamage();
+
+                for (int index = 0; index < 3; index++)
+                {
+                    heart[index].gameObject.SetActive(false);
+                }
+                for (int index = 0; index < GameManager.instance.life; index++)
+                {
+                    heart[index].gameObject.SetActive(true);
+                }
+                if (GameManager.instance.life <= 0)
+                {
+                    SceneManager.LoadScene("Gameover");
+                }
+
             }
 
         }
@@ -121,6 +133,8 @@ public class PlayerController : MonoBehaviour
 
     void OnDamage()
     {
+        damegedWhen = Time.time;
         anim.SetTrigger("hurt");
+        sound_d.GetComponent<AudioSource>().Play();
     }
 }
