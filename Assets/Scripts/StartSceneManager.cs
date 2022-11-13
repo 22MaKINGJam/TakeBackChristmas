@@ -32,4 +32,5 @@ public class StartSceneManager : MonoBehaviour
             SceneManager.LoadScene(1);
 
     }
+
 }
