@@ -112,6 +112,6 @@ public class PlayerController : MonoBehaviour
 
     void OnDamage()
     {
-
+        anim.SetTrigger("hurt");
     }
 }
