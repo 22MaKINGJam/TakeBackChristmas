@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 0eb24e2721fe0884795e23813e9d8fc7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Nanum HarABeoJiEuiNaNum
+  fontNames:
+  - Nanum HarABeoJiEuiNaNum
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 22538273384168444b6c8ebcccc579ee, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
