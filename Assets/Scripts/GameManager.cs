@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     #region Singleton
     public static GameManager instance;
 
-    public int score = 0;
+    public int score;
     public GameObject player;
     public int life = 3;
     public GameObject Gameover;
@@ -26,11 +26,7 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    void Start()
-    {
-        
-  //      Gameover.SetActive(false);
-    }
+   
 
 
     // Update is called once per frame
@@ -39,17 +35,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void redo()
-    {
-        SceneManager.LoadScene("stage1");
-        life = 3;
-        Gameover.SetActive(false);
-
-    }
-    public void undo()
-    {
-        SceneManager.LoadScene("StartSceneManager");
-        Gameover.SetActive(false);
-
-    }
+   
+    
 }
+

@@ -22434,6 +22434,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gameover
       objectReference: {fileID: 0}
+    - target: {fileID: 6683485045069936692, guid: 9eee66c1e7dae18469be6be4703c75f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6683485045069936693, guid: 9eee66c1e7dae18469be6be4703c75f2,
         type: 3}
       propertyPath: m_Pivot.x
@@ -22603,7 +22608,7 @@ PrefabInstance:
     - target: {fileID: 551476697397858386, guid: 9fb5e11ea6f7d1148a160d867407c309,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 269.06
+      value: -5.25
       objectReference: {fileID: 0}
     - target: {fileID: 551476697397858386, guid: 9fb5e11ea6f7d1148a160d867407c309,
         type: 3}
@@ -22723,21 +22728,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: -823.7212
-      objectReference: {fileID: 0}
-    - target: {fileID: 3918561230962873773, guid: c0ae5109e44f88845a5729f24ce75e46,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3918561230962873773, guid: c0ae5109e44f88845a5729f24ce75e46,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3918561230962873773, guid: c0ae5109e44f88845a5729f24ce75e46,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3918561230962873773, guid: c0ae5109e44f88845a5729f24ce75e46,
         type: 3}

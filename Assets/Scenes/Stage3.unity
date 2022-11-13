@@ -27014,7 +27014,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626662136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.04, y: -2.45, z: 0}
+  m_LocalPosition: {x: -4, y: -2.45, z: 0}
   m_LocalScale: {x: 0.18681751, y: 0.18681751, z: 0.18681751}
   m_Children: []
   m_Father: {fileID: 0}
@@ -27057,6 +27057,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Gameover
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683485045069936692, guid: 9eee66c1e7dae18469be6be4703c75f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6683485045069936693, guid: 9eee66c1e7dae18469be6be4703c75f2,
         type: 3}
@@ -27569,7 +27574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1831146228
 MonoBehaviour:
   m_ObjectHideFlags: 0
