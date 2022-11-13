@@ -7,8 +7,12 @@ public class GameManager : MonoBehaviour
     #region Singleton
     public static GameManager instance;
 
+    public int score;
+    public GameObject player;
+    public int life = 3;
     void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         if (instance == null)
         {
             instance = this;
@@ -20,12 +24,11 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    public int score;
-    public GameObject player;
     void Start()
     {
         
     }
+
 
     // Update is called once per frame
     void Update()

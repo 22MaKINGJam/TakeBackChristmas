@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6738784237810863752}
   m_Layer: 0
   m_Name: "\uCFE0\uD0A4"
-  m_TagString: Untagged
+  m_TagString: GingerBread
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

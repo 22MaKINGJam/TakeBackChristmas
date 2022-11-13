@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float jumpForce = 7f;
-    public float jumpForce2 = 7f;
+    public float jumpForce = 700f;
+    public float jumpForce2 = 700f;
     public float runSpeed = 2.0f;
     public float runSpeedWhileJump = 2.0f;
     private int jumpCount = 0;
@@ -14,11 +14,20 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     Animator anim;
 
-    public int life;
+    //public int life;
     public GameObject[] heart;
 
     void Start()
     {
+        Debug.Log(GameManager.instance.life);
+        for (int index = 0; index < 3; index++)
+        {
+            heart[index].gameObject.SetActive(false);
+        }
+        for (int index = 0; index < GameManager.instance.life; index++)
+        {
+            heart[index].gameObject.SetActive(true);
+        }
         anim = GetComponent<Animator>();
         this.playerRigidbody = this.GetComponent<Rigidbody2D>();
 
@@ -79,18 +88,30 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D o)
     {
-        if (o.gameObject.CompareTag("Monster"))
+        if (o.gameObject.CompareTag("Monster") || o.gameObject.CompareTag("GingerBread"))
         {
-            life--;
-            Debug.Log("충돌");
-            for (int index = 0; index < 3; index++)
+            GameManager.instance.life--;
+            OnDamage();
+            if (GameManager.instance.life <= 0)
             {
-                heart[index].gameObject.SetActive(false);
+                //gameover scene 으로 전환
             }
-            for (int index = 0; index < life; index++){
-                heart[index].gameObject.SetActive(true);
+            else
+            {
+                for (int index = 0; index < 3; index++)
+                {
+                    heart[index].gameObject.SetActive(false);
+                }
+                for (int index = 0; index < GameManager.instance.life; index++)
+                {
+                    heart[index].gameObject.SetActive(true);
+                }
             }
         }
     }
 
+    void OnDamage()
+    {
+
+    }
 }

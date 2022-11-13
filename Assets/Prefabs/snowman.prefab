@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4410191253089324540}
   m_Layer: 0
   m_Name: snowman
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,3 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Max: 1
   speed: 0
+  sprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
