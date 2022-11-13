@@ -28,7 +28,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Gameover.SetActive(false);
+        
+  //      Gameover.SetActive(false);
     }
 
 
