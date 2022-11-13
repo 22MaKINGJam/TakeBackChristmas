@@ -373,7 +373,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "YES \uB97C \uC120\uD0DD\uD588\uAD70..!"
+  m_text: "\uC88B\uC544~!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d648153280ba9ee43a4105d47cdd032d, type: 2}
   m_sharedMaterial: {fileID: -6287746947745941302, guid: d648153280ba9ee43a4105d47cdd032d,
