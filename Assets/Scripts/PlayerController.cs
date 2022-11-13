@@ -13,13 +13,16 @@ public class PlayerController : MonoBehaviour
     private bool isDoubleJump = false;
     private Rigidbody2D playerRigidbody;
     Animator anim;
-    // Start is called before the first frame update
+
+    public int life;
+    public GameObject[] heart;
+
     void Start()
     {
         anim = GetComponent<Animator>();
         this.playerRigidbody = this.GetComponent<Rigidbody2D>();
-        
 
+        
     }
 
     // Update is called once per frame
@@ -74,6 +77,20 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
+    void OnTriggerEnter2D(Collider2D o)
+    {
+        if (o.gameObject.CompareTag("Monster"))
+        {
+            life--;
+            Debug.Log("충돌");
+            for (int index = 0; index < 3; index++)
+            {
+                heart[index].gameObject.SetActive(false);
+            }
+            for (int index = 0; index < life; index++){
+                heart[index].gameObject.SetActive(true);
+            }
+        }
+    }
 
 }
