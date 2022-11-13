@@ -6,10 +6,11 @@ using TMPro;
 public class IncreaseScore : MonoBehaviour
 {
     public TextMeshProUGUI score_text;
-    int score_sum = 0;
+    int score_sum;
     // Start is called before the first frame update
     void Start()
     {
+        score_sum = GameManager.instance.score;
         score_text.text = ""+score_sum;
     }
 
