@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -91,22 +92,22 @@ public class PlayerController : MonoBehaviour
         if (o.gameObject.CompareTag("Monster") || o.gameObject.CompareTag("GingerBread"))
         {
             GameManager.instance.life--;
+            Debug.Log(GameManager.instance.life);
             OnDamage();
+           
+            for (int index = 0; index < 3; index++)
+            {
+                heart[index].gameObject.SetActive(false);
+            }
+            for (int index = 0; index< GameManager.instance.life; index++)
+            {
+                heart[index].gameObject.SetActive(true);
+            }
             if (GameManager.instance.life <= 0)
             {
-                //gameover scene 으로 전환
+                GameManager.instance.Gameover.SetActive(true);
             }
-            else
-            {
-                for (int index = 0; index < 3; index++)
-                {
-                    heart[index].gameObject.SetActive(false);
-                }
-                for (int index = 0; index < GameManager.instance.life; index++)
-                {
-                    heart[index].gameObject.SetActive(true);
-                }
-            }
+
         }
     }
 
