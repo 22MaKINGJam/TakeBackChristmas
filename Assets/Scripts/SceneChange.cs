@@ -5,6 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
+    public void StartSceneYes()
+    {
+        SceneManager.LoadScene("StartScene_Yes");
+
+    }
+    public void stage1()
+    {
+        SceneManager.LoadScene("stage1");
+
+    }
     public void ScoreBoardScene()
     {
         SceneManager.LoadScene("score_board");
@@ -15,4 +25,5 @@ public class SceneChange : MonoBehaviour
         SceneManager.LoadScene("gift_chaeyeon");
 
     }
+
 }
