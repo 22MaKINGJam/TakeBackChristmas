@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
         }
 
         pos = this.transform.position;
-        if (pos.y < -10)
+        if (pos.y < -30)
         {
             SceneManager.LoadScene("Gameover");
 
@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D o)
     {
-        if (Time.time - damegedWhen > 0.3f)
+        if (Time.time - damegedWhen > 0.5f)
         {
             if (o.gameObject.CompareTag("Monster") || o.gameObject.CompareTag("GingerBread"))
             {

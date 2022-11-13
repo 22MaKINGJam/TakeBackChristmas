@@ -172,7 +172,10 @@ MonoBehaviour:
   sound_j1: {fileID: 0}
   sound_j2: {fileID: 0}
   sound_d: {fileID: 0}
-  heart: []
+  heart:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &551476697397858384
 MonoBehaviour:
   m_ObjectHideFlags: 0
