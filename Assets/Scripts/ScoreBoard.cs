@@ -36,13 +36,18 @@ public class ScoreBoard : MonoBehaviour
         PlayerPrefs.SetInt("SBscore4", SBscore[4]);
         PlayerPrefs.Save();
     }
+    public string scoreload(string SBscore_){
+        if(PlayerPrefs.GetInt(SBscore_)!=0)
+                return  PlayerPrefs.GetInt(SBscore_).ToString();
+                else return "";
+    }
     public void loadScore()
     {
-        score0.text = "1등 : " + PlayerPrefs.GetInt("SBscore0").ToString();
-        score1.text = "2등 : " + PlayerPrefs.GetInt("SBscore1").ToString();
-        score2.text = "3등 : " + PlayerPrefs.GetInt("SBscore2").ToString();
-        score3.text = "4등 : " + PlayerPrefs.GetInt("SBscore3").ToString();
-        score4.text = "5등 : " + PlayerPrefs.GetInt("SBscore4").ToString();
+        score0.text = scoreload("SBscore0");
+        score1.text = scoreload("SBscore1");
+        score2.text = scoreload("SBscore2");
+        score3.text = scoreload("SBscore3");
+        score4.text = scoreload("SBscore4");
     }
     public void sortscore()
     {
