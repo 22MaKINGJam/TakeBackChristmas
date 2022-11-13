@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GiftTrigger : MonoBehaviour
 {
-
+    public string transferMapName;
     public GameObject character;
     public TextMeshProUGUI score_text;
     public int score; //red = 1, white = 10
@@ -30,6 +31,10 @@ public class GiftTrigger : MonoBehaviour
             score_text.GetComponent<IncreaseScore>().AddScore(score);
             GameManager.instance.player.GetComponent<PlayerSound>().PlaySound("getscore");
             gameObject.SetActive(false);    
+        }
+        if(gameObject.name == "BigGiftPrefab" && collision.gameObject == character)
+        {
+            SceneManager.LoadScene(transferMapName);
         }
 
     }

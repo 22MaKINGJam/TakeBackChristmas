@@ -2,33 +2,63 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CharacterMovement : MonoBehaviour
 {
-    public float Speed = 10.0f;     // 움직이는 속도. public으로 설정하여 유니티 화면에서 조정할 수 있다.
-
-    float h, v;                     // 가로축과 세로축을 담을 변수를 전역변수로 생성. FixedUpdate에서 직접 생성하지 않은 이유는
-                                    // 이후 다른 함수에서도 접근할 것이기 때문.
-
+    public float maxSpeed;
+    public float jumpPower;
+    Rigidbody2D rigid;
+    SpriteRenderer spriteRenderer;
+    Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-
+        this.rigid = this.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.down, 1, LayerMask.GetMask("Platform"));
 
+
+        //빔에 맞았는지 
+        if (rayHit.collider != null)
+        {
+            Debug.Log("update"+rayHit.collider.name);
+        }
     }
 
-    // 이동 관련 함수를 짤 때는 Update보다 FixedUpdate가 더 효율이 좋다고 한다. 그래서 사용했다.
-    void FixedUpdate()
+    void FixedUpdate() //지속적인 키 입력
     {
-        // Point 1.
-        h = Input.GetAxis("Horizontal");        // 가로축
-        v = Input.GetAxis("Vertical");          // 세로축
+        ////float h = Input.GetAxisRaw("Horizontal");
+        ////rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
 
-        // Point 2.
-        transform.position += new Vector3(h, 0, v) * Speed * Time.deltaTime;
+        ////최대속도 
+        //if (rigid.velocity.x > maxSpeed)//오른쪽
+        //{
+        //    rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);//y값을 0으로 잡으면 공중에서 멈춰버림
+        //}
+        //else if (rigid.velocity.x < maxSpeed * (-1))//왼쪽
+        //{
+        //    rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
+        //}
+
+        //// Landing Platform
+
+        //Debug.DrawRay(rigid.position, Vector3.down, new Color(0, 1, 0));
+        //// 시작,방향 색깔
+
+        RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.up, 1, LayerMask.GetMask("Platform"));
+
+
+        //빔에 맞았는지 
+        if (rayHit.collider != null)
+        {
+            Debug.Log(rayHit.collider.name);
+        }
     }
+
+
 }
+

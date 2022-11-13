@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float jumpForce = 700f;
-    public float jumpForce2 = 700f;
+    public float jumpForce = 7f;
+    public float jumpForce2 = 7f;
     public float runSpeed = 2.0f;
     public float runSpeedWhileJump = 2.0f;
     private int jumpCount = 0;
