@@ -38,11 +38,11 @@ public class ScoreBoard : MonoBehaviour
     }
     public void loadScore()
     {
-        score0.text = "1 : " + PlayerPrefs.GetInt("SBscore0").ToString();
-        score1.text = "2 : " + PlayerPrefs.GetInt("SBscore1").ToString();
-        score2.text = "3 : " + PlayerPrefs.GetInt("SBscore2").ToString();
-        score3.text = "4 : " + PlayerPrefs.GetInt("SBscore3").ToString();
-        score4.text = "5 : " + PlayerPrefs.GetInt("SBscore4").ToString();
+        score0.text = "1등 : " + PlayerPrefs.GetInt("SBscore0").ToString();
+        score1.text = "2등 : " + PlayerPrefs.GetInt("SBscore1").ToString();
+        score2.text = "3등 : " + PlayerPrefs.GetInt("SBscore2").ToString();
+        score3.text = "4등 : " + PlayerPrefs.GetInt("SBscore3").ToString();
+        score4.text = "5등 : " + PlayerPrefs.GetInt("SBscore4").ToString();
     }
     public void sortscore()
     {
