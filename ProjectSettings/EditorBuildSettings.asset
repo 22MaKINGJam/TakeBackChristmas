@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 14fcdec2832666142b32b9ed92d70227
+  - enabled: 1
+    path: Assets/Scenes/StartScene_Yes.unity
+    guid: e1dfdbe858139d843b148f9faf33203d
+  - enabled: 1
     path: Assets/Scenes/gift_chaeyeon.unity
     guid: ec0e6403e3c57e749aed712753742c78
   - enabled: 1
